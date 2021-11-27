@@ -9,3 +9,12 @@ class PythonMediumContent(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class ProgrammingMediumContent(models.Model):
+    title = models.CharField(max_length=300)
+    url = models.TextField()
+    img = models.URLField(null=True, blank=True)
+
+    def __str__(self):
+        return self.title
