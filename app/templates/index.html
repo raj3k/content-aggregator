@@ -1,7 +1,39 @@
 {% extends 'base.html' %}
 {% block page_content %}
-{% for entry in py_content %}
-<div class="card mb-3" style="max-width: 540px;">
+
+<div class="row">
+  <div class="col-sm-6">
+    {% for entry in py_content %}
+    <div class="card">
+      <div class="card-body">
+        <img src="{{entry.img}}" class="img-fluid rounded-start" alt="entry-image">
+        <h5 class="card-title">{{entry.title}}</h5>
+        <a href="{{entry.url}}" class="btn btn-primary">link</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="col-sm-6">
+    {% for entry in programming_content %}
+    <div class="card">
+      <div class="card-body">
+        <img src="{{entry.img}}" class="img-fluid rounded-start" alt="entry-image">
+        <h5 class="card-title">{{ entry.title }}</h5>
+        <a href="{{entry.url}}" class="btn btn-primary">link</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- <div class="card mb-3" style="max-width: 540px;">
     <div class="row g-0">
       <div class="col-md-4">
         <img src="{{entry.img}}" class="img-fluid rounded-start" alt="entry-image">
@@ -13,6 +45,5 @@
         </div>
       </div>
     </div>
-  </div>
-{% endfor %}
+  </div> -->
 {% endblock %}
